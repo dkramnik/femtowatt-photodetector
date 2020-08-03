@@ -5,6 +5,10 @@ clear
 lw = 1.25;
 fs = 14;
 
+s = tf( 's' );
+
+%% Noise estimate
+
 i_ni_target = 0.42e-15;     % 0.42 fA/sqrt(Hz)
 
 % Thorlabs FD11A
@@ -13,7 +17,7 @@ R_PD = 5e9;     % 10mV/2pA, from datasheet
 
 C_IN = C_PD;    % Ignoring opamp Cin for now because PD is so big
 
-R_F_vec = logspace( 0, 15, 1000 );    % Picking arb value for TIA gain for now
+R_F_vec = logspace( 0, 12, 1000 );    % Picking arb value for TIA gain for now
 
 GBWP = 4.2e6;     % Opamp gain-BW product (took LT1792 as typical example)
 
@@ -92,6 +96,32 @@ set( gca, 'xscale', 'log' );
 set( gca, 'yscale', 'log' );
 
 xlabel( 'R_F' );
-ylabel( 'TIA BW [Hz]' );
+ylabel( 'Ideal TIA BW [Hz]' );
 
 set( gca, 'fontsize', fs );
+
+%% Loop Shaping
+
+fp1 = 10;
+Aol = 1.3e6 / ( s / ( 2 * pi * fp1 ) + 1 );   % 100MHz GBP
+
+Z_i = prl( R_PD, 1 / ( s * C_PD ) );
+Z_f = 100e9;
+fb_div = Z_i / ( Z_i + Z_f );
+
+Tloop = fb_div * Aol;
+Acl = prl( Z_i, Z_f ) * Aol / ( 1 + Aol * Z_i / ( Z_i + Z_f ) );
+
+fig2 = figure( ); hold all;
+
+opts = bodeoptions;
+opts.FreqUnits = 'Hz';
+
+bode( Aol, opts );
+bode( Tloop, opts );
+bode( Acl, opts );
+
+legend( 'Opamp Open-Loop Gain', 'TIA Loop Gain', 'TIA Closed-Loop Transimpedance' );
+grid on;
+
+
