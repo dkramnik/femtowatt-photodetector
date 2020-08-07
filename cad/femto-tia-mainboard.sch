@@ -8006,8 +8006,8 @@ Source: &lt;a href="http://emersonconnectivity.com/OA_MEDIA/drawings/dr-14207018
 <smd name="12" x="-0.5" y="1.4" dx="0.25" dy="0.7" layer="1" rot="R180" stop="no" cream="no"/>
 <smd name="13" x="-1" y="1.4" dx="0.25" dy="0.7" layer="1" rot="R180" stop="no" cream="no"/>
 <smd name="14" x="-1.5" y="1.4" dx="0.25" dy="0.7" layer="1" rot="R180" stop="no" cream="no"/>
-<smd name="4@1" x="-0.75" y="0" dx="1.75" dy="1.65" layer="1" roundness="25" stop="no" cream="no"/>
-<smd name="9@2" x="1" y="0" dx="1.07" dy="1.65" layer="1" roundness="25" stop="no" cream="no"/>
+<smd name="4_PAD" x="-0.75" y="0" dx="1.75" dy="1.65" layer="1" roundness="25" stop="no" cream="no"/>
+<smd name="9_PAD" x="1" y="0" dx="1.07" dy="1.65" layer="1" roundness="25" stop="no" cream="no"/>
 <text x="-1.905" y="2.2225" size="0.8128" layer="25" font="vector" ratio="16">&gt;NAME</text>
 <text x="-1.905" y="-2.8575" size="0.8128" layer="27" font="vector" ratio="16">&gt;VALUE</text>
 <rectangle x1="-1.65" y1="-1.775" x2="-1.35" y2="-1.025" layer="29"/>
@@ -8075,25 +8075,26 @@ Source: &lt;a href="http://emersonconnectivity.com/OA_MEDIA/drawings/dr-14207018
 </polygon>
 </symbol>
 <symbol name="LT3032">
-<wire x1="-7.62" y1="10.16" x2="7.62" y2="10.16" width="0.254" layer="94"/>
-<wire x1="7.62" y1="10.16" x2="7.62" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="10.16" x2="12.7" y2="10.16" width="0.254" layer="94"/>
+<wire x1="12.7" y1="10.16" x2="12.7" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
 <wire x1="-7.62" y1="-10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
-<pin name="OP" x="10.16" y="7.62" length="short" direction="pwr" rot="R180"/>
-<pin name="AJP" x="10.16" y="5.08" length="short" rot="R180"/>
-<pin name="BP" x="10.16" y="2.54" length="short" rot="R180"/>
-<pin name="GND" x="-10.16" y="-7.62" length="short" direction="pwr"/>
-<pin name="IN" x="-10.16" y="0" length="short" direction="pwr"/>
-<pin name="ON" x="10.16" y="0" length="short" direction="pwr" rot="R180"/>
-<pin name="AJN" x="10.16" y="-2.54" length="short" rot="R180"/>
-<pin name="!SN" x="-10.16" y="-5.08" length="short"/>
-<pin name="BN" x="10.16" y="-5.08" length="short" rot="R180"/>
-<pin name="!SP" x="-10.16" y="5.08" length="short"/>
-<pin name="IP" x="-10.16" y="7.62" length="short" direction="pwr"/>
+<pin name="OUTP" x="15.24" y="7.62" length="short" direction="pwr" rot="R180"/>
+<pin name="AJP" x="15.24" y="5.08" length="short" rot="R180"/>
+<pin name="BYPP" x="15.24" y="2.54" length="short" rot="R180"/>
+<pin name="GND4" x="-10.16" y="-7.62" length="short" direction="pwr"/>
+<pin name="INN6" x="-10.16" y="0" length="short" direction="pwr"/>
+<pin name="OUTN" x="15.24" y="0" length="short" direction="pwr" rot="R180"/>
+<pin name="AJN" x="15.24" y="-2.54" length="short" rot="R180"/>
+<pin name="!SHDNN" x="-10.16" y="-5.08" length="short"/>
+<pin name="BYPN" x="15.24" y="-5.08" length="short" rot="R180"/>
+<pin name="!SHDNP" x="-10.16" y="5.08" length="short"/>
+<pin name="INP" x="-10.16" y="7.62" length="short" direction="pwr"/>
 <text x="-7.62" y="15.24" size="1.778" layer="95">&gt;NAME</text>
 <text x="-7.62" y="12.7" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="GND@1" x="10.16" y="-7.62" length="short" direction="pwr" rot="R180"/>
-<pin name="IN@1" x="-10.16" y="-2.54" length="short" direction="pwr"/>
+<pin name="GND5" x="15.24" y="-7.62" length="short" direction="pwr" rot="R180"/>
+<pin name="INN9" x="-10.16" y="-2.54" length="short" direction="pwr"/>
+<pin name="NC" x="-10.16" y="2.54" length="short"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -8281,19 +8282,20 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <devices>
 <device name="" package="DFN14-4X3DE">
 <connects>
-<connect gate="G$1" pin="!SN" pad="10"/>
-<connect gate="G$1" pin="!SP" pad="12"/>
+<connect gate="G$1" pin="!SHDNN" pad="10"/>
+<connect gate="G$1" pin="!SHDNP" pad="12"/>
 <connect gate="G$1" pin="AJN" pad="8"/>
 <connect gate="G$1" pin="AJP" pad="2"/>
-<connect gate="G$1" pin="BN" pad="11"/>
-<connect gate="G$1" pin="BP" pad="3"/>
-<connect gate="G$1" pin="GND" pad="4"/>
-<connect gate="G$1" pin="GND@1" pad="5"/>
-<connect gate="G$1" pin="IN" pad="6"/>
-<connect gate="G$1" pin="IN@1" pad="9"/>
-<connect gate="G$1" pin="IP" pad="14"/>
-<connect gate="G$1" pin="ON" pad="7"/>
-<connect gate="G$1" pin="OP" pad="1"/>
+<connect gate="G$1" pin="BYPN" pad="11"/>
+<connect gate="G$1" pin="BYPP" pad="3"/>
+<connect gate="G$1" pin="GND4" pad="4 4_PAD"/>
+<connect gate="G$1" pin="GND5" pad="5"/>
+<connect gate="G$1" pin="INN6" pad="6"/>
+<connect gate="G$1" pin="INN9" pad="9 9_PAD"/>
+<connect gate="G$1" pin="INP" pad="14"/>
+<connect gate="G$1" pin="NC" pad="13"/>
+<connect gate="G$1" pin="OUTN" pad="7"/>
+<connect gate="G$1" pin="OUTP" pad="1"/>
 </connects>
 <technologies>
 <technology name="">
@@ -10895,44 +10897,6 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <device name="" package="VIA">
 <connects>
 <connect gate="G$1" pin="P" pad="1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="Kramnik's Library">
-<description>Components used by KRAMNIK HEAVY INDUSTRIES.</description>
-<packages>
-<package name="0.125_PAD">
-<smd name="1" x="0" y="0" dx="9.525" dy="3.175" layer="1"/>
-<text x="-5.08" y="3.81" size="1.27" layer="25">&gt;NAME</text>
-<text x="-5.08" y="2.54" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="PAD">
-<wire x1="-7.62" y1="2.54" x2="-7.62" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-2.54" x2="7.62" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-2.54" x2="7.62" y2="2.54" width="0.254" layer="94"/>
-<wire x1="7.62" y1="2.54" x2="-7.62" y2="2.54" width="0.254" layer="94"/>
-<pin name="1" x="-12.7" y="0" visible="off" length="middle"/>
-<text x="-7.62" y="7.62" size="1.778" layer="95">&gt;NAME</text>
-<text x="-7.62" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="0.125_PAD" prefix="J">
-<gates>
-<gate name="G$1" symbol="PAD" x="-5.08" y="0"/>
-</gates>
-<devices>
-<device name="" package="0.125_PAD">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -14601,8 +14565,8 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R1" library="rcl-modified-footprints" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="RES SMD 100R 0603 1%"/>
-<part name="R2" library="rcl-modified-footprints" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="RES SMD 100R 0603 1%"/>
+<part name="R1" library="rcl-modified-footprints" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="RES SMD 100R 0603 1%"/>
+<part name="R2" library="rcl-modified-footprints" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="RES SMD 100R 0603 1%"/>
 <part name="IC2" library="femto-tia" deviceset="OPA827" device="" value="OPA827"/>
 <part name="R3" library="rcl-modified-footprints" deviceset="R-EU_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="RES SMD 49R9 1206 1%"/>
 <part name="X1" library="meng" deviceset="SMA-" device="142-0701-881/886" value="SIG_OUT"/>
@@ -14618,11 +14582,10 @@ Source: AVX .. aphvc.pdf</description>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R4" library="pot" library_urn="urn:adsk.eagle:library:331" deviceset="TRIM_EU-" device="RJ9W" package3d_urn="urn:adsk.eagle:package:22702/1" value="100k"/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="R5" library="rcl-modified-footprints" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="RES SMD 100R 0603 1%"/>
-<part name="R6" library="rcl-modified-footprints" deviceset="R-EU_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/2" value="RES SMD 100R 0603 1%"/>
+<part name="R5" library="rcl-modified-footprints" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="RES SMD 100R 0603 1%"/>
+<part name="R6" library="rcl-modified-footprints" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="RES SMD 100R 0603 1%"/>
 <part name="R7" library="pot" library_urn="urn:adsk.eagle:library:331" deviceset="TRIM_EU-" device="RJ9W" package3d_urn="urn:adsk.eagle:package:22702/1" value="100k"/>
 <part name="U$1" library="4534" deviceset="VIA" device=""/>
-<part name="J1" library="Kramnik's Library" deviceset="0.125_PAD" device=""/>
 <part name="IC3" library="femto-tia" deviceset="OPA827" device="" value="OPA140"/>
 <part name="C9" library="rcl-modified-footprints" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2"/>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -14636,7 +14599,6 @@ Source: AVX .. aphvc.pdf</description>
 <part name="C14" library="rcl-modified-footprints" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="CAP CER 0.1UF 0805 X7R"/>
 <part name="GND16" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND17" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="IC4" library="meng" deviceset="LT3032" device="" value="LT3032-5"/>
 <part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="C15" library="rcl" deviceset="C-EU" device="C1206" value="10u"/>
 <part name="C16" library="rcl" deviceset="C-EU" device="C1206" value="10u"/>
@@ -14647,7 +14609,6 @@ Source: AVX .. aphvc.pdf</description>
 <part name="DNP11" library="meng" deviceset="ARROW_1DIR" device=""/>
 <part name="DNP12" library="meng" deviceset="ARROW_1DIR" device=""/>
 <part name="GND23" library="supply1" deviceset="GND" device=""/>
-<part name="IC5" library="meng" deviceset="LT3032" device="" value="LT3032-5"/>
 <part name="GND24" library="supply1" deviceset="GND" device=""/>
 <part name="C21" library="rcl" deviceset="C-EU" device="C1206" value="10u"/>
 <part name="C22" library="rcl" deviceset="C-EU" device="C1206" value="10u"/>
@@ -14664,12 +14625,16 @@ Source: AVX .. aphvc.pdf</description>
 <part name="DNP3" library="meng" deviceset="ARROW_1DIR" device=""/>
 <part name="DNP4" library="meng" deviceset="ARROW_1DIR" device=""/>
 <part name="GND29" library="supply1" deviceset="GND" device=""/>
-<part name="U$2" library="4534" deviceset="VIA" device=""/>
-<part name="U$3" library="4534" deviceset="VIA" device=""/>
-<part name="U$4" library="4534" deviceset="VIA" device=""/>
+<part name="U$2" library="4534" deviceset="VIA" device="" value="IN+"/>
+<part name="U$3" library="4534" deviceset="VIA" device="" value="IN-"/>
+<part name="U$4" library="4534" deviceset="VIA" device="" value="GND"/>
 <part name="GND21" library="supply1" deviceset="GND" device=""/>
 <part name="D1" library="adafruit" deviceset="DIODE" device="SMA"/>
 <part name="D2" library="adafruit" deviceset="DIODE" device="SMA"/>
+<part name="IC4" library="meng" deviceset="LT3032" device="" value="LT3032"/>
+<part name="IC5" library="meng" deviceset="LT3032" device="" value="LT3032"/>
+<part name="U$5" library="4534" deviceset="VIA" device=""/>
+<part name="U$6" library="4534" deviceset="VIA" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14690,8 +14655,8 @@ package leakage will be ruined</text>
 <text x="60.96" y="203.2" size="1.778" layer="98" rot="R180">To TIA Feedback Resistor</text>
 <text x="55.88" y="193.04" size="1.778" layer="98" rot="R180">To Air-Gap Compensation Capacitor</text>
 <text x="25.4" y="86.36" size="1.778" layer="97">Power Supplies</text>
-<text x="83.82" y="40.64" size="1.778" layer="98">AJP and AJN are NC in fixed version</text>
-<text x="93.98" y="53.34" size="1.778" layer="98">+/- 5V LDO</text>
+<text x="78.74" y="40.64" size="1.778" layer="98">AJP and AJN are NC in fixed version</text>
+<text x="88.9" y="53.34" size="1.778" layer="98">+/- 12V LDO</text>
 <text x="165.1" y="40.64" size="1.778" layer="98">AJP and AJN are NC in fixed version</text>
 <text x="175.26" y="53.34" size="1.778" layer="98">+/- 5V LDO</text>
 </plain>
@@ -14808,10 +14773,6 @@ package leakage will be ruined</text>
 <attribute name="VALUE" x="133.35" y="156.21" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="U$1" gate="G$1" x="66.04" y="200.66" smashed="yes"/>
-<instance part="J1" gate="G$1" x="66.04" y="193.04" smashed="yes" rot="R180">
-<attribute name="NAME" x="73.66" y="185.42" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="73.66" y="187.96" size="1.778" layer="96" rot="R180"/>
-</instance>
 <instance part="IC3" gate="G$1" x="172.72" y="152.4" smashed="yes">
 <attribute name="NAME" x="175.26" y="155.575" size="1.778" layer="95"/>
 <attribute name="VALUE" x="175.26" y="147.32" size="1.778" layer="96"/>
@@ -14858,26 +14819,22 @@ package leakage will be ruined</text>
 <instance part="GND17" gate="1" x="144.78" y="144.78" smashed="yes">
 <attribute name="VALUE" x="142.24" y="142.24" size="1.778" layer="96"/>
 </instance>
-<instance part="IC4" gate="G$1" x="101.6" y="66.04" smashed="yes">
-<attribute name="NAME" x="93.98" y="81.28" size="1.778" layer="95"/>
-<attribute name="VALUE" x="93.98" y="78.74" size="1.778" layer="96"/>
+<instance part="GND18" gate="1" x="83.82" y="48.26" smashed="yes">
+<attribute name="VALUE" x="81.28" y="45.72" size="1.778" layer="96"/>
 </instance>
-<instance part="GND18" gate="1" x="88.9" y="48.26" smashed="yes">
-<attribute name="VALUE" x="86.36" y="45.72" size="1.778" layer="96"/>
+<instance part="C15" gate="G$1" x="68.58" y="60.96" smashed="yes" rot="MR0">
+<attribute name="NAME" x="67.056" y="61.341" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="67.056" y="56.261" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="C15" gate="G$1" x="73.66" y="60.96" smashed="yes" rot="MR0">
-<attribute name="NAME" x="72.136" y="61.341" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="72.136" y="56.261" size="1.778" layer="96" rot="MR0"/>
+<instance part="C16" gate="G$1" x="76.2" y="60.96" smashed="yes" rot="MR0">
+<attribute name="NAME" x="74.676" y="61.341" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="74.676" y="56.261" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="C16" gate="G$1" x="81.28" y="60.96" smashed="yes" rot="MR0">
-<attribute name="NAME" x="79.756" y="61.341" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="79.756" y="56.261" size="1.778" layer="96" rot="MR0"/>
+<instance part="GND19" gate="1" x="76.2" y="48.26" smashed="yes">
+<attribute name="VALUE" x="73.66" y="45.72" size="1.778" layer="96"/>
 </instance>
-<instance part="GND19" gate="1" x="81.28" y="48.26" smashed="yes">
-<attribute name="VALUE" x="78.74" y="45.72" size="1.778" layer="96"/>
-</instance>
-<instance part="GND20" gate="1" x="73.66" y="48.26" smashed="yes">
-<attribute name="VALUE" x="71.12" y="45.72" size="1.778" layer="96"/>
+<instance part="GND20" gate="1" x="68.58" y="48.26" smashed="yes">
+<attribute name="VALUE" x="66.04" y="45.72" size="1.778" layer="96"/>
 </instance>
 <instance part="C19" gate="G$1" x="116.84" y="60.96" smashed="yes" rot="R90">
 <attribute name="NAME" x="125.476" y="63.119" size="1.778" layer="95" rot="R180"/>
@@ -14887,14 +14844,10 @@ package leakage will be ruined</text>
 <attribute name="NAME" x="125.476" y="70.739" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="125.476" y="68.199" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="DNP11" gate="G$1" x="71.12" y="73.66" smashed="yes"/>
-<instance part="DNP12" gate="G$1" x="71.12" y="66.04" smashed="yes"/>
+<instance part="DNP11" gate="G$1" x="66.04" y="73.66" smashed="yes"/>
+<instance part="DNP12" gate="G$1" x="66.04" y="66.04" smashed="yes"/>
 <instance part="GND23" gate="1" x="114.3" y="48.26" smashed="yes">
 <attribute name="VALUE" x="111.76" y="45.72" size="1.778" layer="96"/>
-</instance>
-<instance part="IC5" gate="G$1" x="182.88" y="66.04" smashed="yes">
-<attribute name="NAME" x="175.26" y="81.28" size="1.778" layer="95"/>
-<attribute name="VALUE" x="175.26" y="78.74" size="1.778" layer="96"/>
 </instance>
 <instance part="GND24" gate="1" x="170.18" y="48.26" smashed="yes">
 <attribute name="VALUE" x="167.64" y="45.72" size="1.778" layer="96"/>
@@ -14907,13 +14860,13 @@ package leakage will be ruined</text>
 <attribute name="NAME" x="161.036" y="61.341" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="161.036" y="56.261" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="C23" gate="G$1" x="220.98" y="60.96" smashed="yes">
-<attribute name="NAME" x="222.504" y="61.341" size="1.778" layer="95"/>
-<attribute name="VALUE" x="222.504" y="56.261" size="1.778" layer="96"/>
+<instance part="C23" gate="G$1" x="226.06" y="60.96" smashed="yes">
+<attribute name="NAME" x="227.584" y="61.341" size="1.778" layer="95"/>
+<attribute name="VALUE" x="227.584" y="56.261" size="1.778" layer="96"/>
 </instance>
-<instance part="C24" gate="G$1" x="213.36" y="60.96" smashed="yes">
-<attribute name="NAME" x="214.884" y="61.341" size="1.778" layer="95"/>
-<attribute name="VALUE" x="214.884" y="56.261" size="1.778" layer="96"/>
+<instance part="C24" gate="G$1" x="218.44" y="60.96" smashed="yes">
+<attribute name="NAME" x="219.964" y="61.341" size="1.778" layer="95"/>
+<attribute name="VALUE" x="219.964" y="56.261" size="1.778" layer="96"/>
 </instance>
 <instance part="GND25" gate="1" x="162.56" y="48.26" smashed="yes">
 <attribute name="VALUE" x="160.02" y="45.72" size="1.778" layer="96"/>
@@ -14921,41 +14874,51 @@ package leakage will be ruined</text>
 <instance part="GND26" gate="1" x="154.94" y="48.26" smashed="yes">
 <attribute name="VALUE" x="152.4" y="45.72" size="1.778" layer="96"/>
 </instance>
-<instance part="GND27" gate="1" x="220.98" y="48.26" smashed="yes">
-<attribute name="VALUE" x="218.44" y="45.72" size="1.778" layer="96"/>
+<instance part="GND27" gate="1" x="226.06" y="48.26" smashed="yes">
+<attribute name="VALUE" x="223.52" y="45.72" size="1.778" layer="96"/>
 </instance>
-<instance part="GND28" gate="1" x="213.36" y="48.26" smashed="yes">
-<attribute name="VALUE" x="210.82" y="45.72" size="1.778" layer="96"/>
+<instance part="GND28" gate="1" x="218.44" y="48.26" smashed="yes">
+<attribute name="VALUE" x="215.9" y="45.72" size="1.778" layer="96"/>
 </instance>
-<instance part="C25" gate="G$1" x="198.12" y="60.96" smashed="yes" rot="R90">
-<attribute name="NAME" x="206.756" y="63.119" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="206.756" y="60.579" size="1.778" layer="96" rot="R180"/>
+<instance part="C25" gate="G$1" x="203.2" y="60.96" smashed="yes" rot="R90">
+<attribute name="NAME" x="211.836" y="63.119" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="211.836" y="60.579" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C26" gate="G$1" x="198.12" y="68.58" smashed="yes" rot="R90">
-<attribute name="NAME" x="206.756" y="70.739" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="206.756" y="68.199" size="1.778" layer="96" rot="R180"/>
+<instance part="C26" gate="G$1" x="203.2" y="68.58" smashed="yes" rot="R90">
+<attribute name="NAME" x="211.836" y="70.739" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="211.836" y="68.199" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="DNP1" gate="G$1" x="228.6" y="73.66" smashed="yes"/>
-<instance part="DNP2" gate="G$1" x="228.6" y="66.04" smashed="yes"/>
+<instance part="DNP1" gate="G$1" x="233.68" y="73.66" smashed="yes"/>
+<instance part="DNP2" gate="G$1" x="233.68" y="66.04" smashed="yes"/>
 <instance part="DNP3" gate="G$1" x="152.4" y="73.66" smashed="yes"/>
 <instance part="DNP4" gate="G$1" x="152.4" y="66.04" smashed="yes"/>
-<instance part="GND29" gate="1" x="195.58" y="48.26" smashed="yes">
-<attribute name="VALUE" x="193.04" y="45.72" size="1.778" layer="96"/>
+<instance part="GND29" gate="1" x="200.66" y="48.26" smashed="yes">
+<attribute name="VALUE" x="198.12" y="45.72" size="1.778" layer="96"/>
 </instance>
-<instance part="U$2" gate="G$1" x="33.02" y="73.66" smashed="yes"/>
-<instance part="U$3" gate="G$1" x="33.02" y="66.04" smashed="yes"/>
-<instance part="U$4" gate="G$1" x="33.02" y="58.42" smashed="yes"/>
-<instance part="GND21" gate="1" x="38.1" y="48.26" smashed="yes">
-<attribute name="VALUE" x="35.56" y="45.72" size="1.778" layer="96"/>
+<instance part="U$2" gate="G$1" x="27.94" y="73.66" smashed="yes"/>
+<instance part="U$3" gate="G$1" x="27.94" y="66.04" smashed="yes"/>
+<instance part="U$4" gate="G$1" x="27.94" y="58.42" smashed="yes"/>
+<instance part="GND21" gate="1" x="33.02" y="48.26" smashed="yes">
+<attribute name="VALUE" x="30.48" y="45.72" size="1.778" layer="96"/>
 </instance>
-<instance part="D1" gate="G$1" x="53.34" y="73.66" smashed="yes">
-<attribute name="NAME" x="50.8" y="76.2" size="1.27" layer="95"/>
-<attribute name="VALUE" x="50.8" y="69.85" size="1.27" layer="96"/>
+<instance part="D1" gate="G$1" x="48.26" y="73.66" smashed="yes">
+<attribute name="NAME" x="45.72" y="76.2" size="1.27" layer="95"/>
+<attribute name="VALUE" x="45.72" y="69.85" size="1.27" layer="96"/>
 </instance>
-<instance part="D2" gate="G$1" x="53.34" y="66.04" smashed="yes" rot="R180">
-<attribute name="NAME" x="55.88" y="63.5" size="1.27" layer="95" rot="R180"/>
-<attribute name="VALUE" x="55.88" y="69.85" size="1.27" layer="96" rot="R180"/>
+<instance part="D2" gate="G$1" x="48.26" y="66.04" smashed="yes" rot="R180">
+<attribute name="NAME" x="50.8" y="63.5" size="1.27" layer="95" rot="R180"/>
+<attribute name="VALUE" x="50.8" y="69.85" size="1.27" layer="96" rot="R180"/>
 </instance>
+<instance part="IC4" gate="G$1" x="96.52" y="66.04" smashed="yes">
+<attribute name="NAME" x="88.9" y="81.28" size="1.778" layer="95"/>
+<attribute name="VALUE" x="88.9" y="78.74" size="1.778" layer="96"/>
+</instance>
+<instance part="IC5" gate="G$1" x="182.88" y="66.04" smashed="yes">
+<attribute name="NAME" x="175.26" y="81.28" size="1.778" layer="95"/>
+<attribute name="VALUE" x="175.26" y="78.74" size="1.778" layer="96"/>
+</instance>
+<instance part="U$5" gate="G$1" x="66.04" y="193.04" smashed="yes"/>
+<instance part="U$6" gate="G$1" x="66.04" y="187.96" smashed="yes"/>
 </instances>
 <busses>
 </busses>
@@ -15064,37 +15027,25 @@ package leakage will be ruined</text>
 </segment>
 <segment>
 <pinref part="GND18" gate="1" pin="GND"/>
-<pinref part="IC4" gate="G$1" pin="GND"/>
-<wire x1="91.44" y1="58.42" x2="88.9" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="58.42" x2="88.9" y2="50.8" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="114.3" y1="50.8" x2="114.3" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="IC4" gate="G$1" pin="GND@1"/>
-<wire x1="114.3" y1="58.42" x2="111.76" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="GND23" gate="1" pin="GND"/>
+<wire x1="86.36" y1="58.42" x2="83.82" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="58.42" x2="83.82" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="GND4"/>
 </segment>
 <segment>
 <pinref part="GND19" gate="1" pin="GND"/>
 <pinref part="C16" gate="G$1" pin="2"/>
-<wire x1="81.28" y1="50.8" x2="81.28" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="50.8" x2="76.2" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND20" gate="1" pin="GND"/>
 <pinref part="C15" gate="G$1" pin="2"/>
-<wire x1="73.66" y1="50.8" x2="73.66" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="50.8" x2="68.58" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND24" gate="1" pin="GND"/>
-<pinref part="IC5" gate="G$1" pin="GND"/>
 <wire x1="172.72" y1="58.42" x2="170.18" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="58.42" x2="170.18" y2="50.8" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<wire x1="195.58" y1="50.8" x2="195.58" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="GND@1"/>
-<wire x1="195.58" y1="58.42" x2="193.04" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="GND29" gate="1" pin="GND"/>
+<pinref part="IC5" gate="G$1" pin="GND4"/>
 </segment>
 <segment>
 <pinref part="GND25" gate="1" pin="GND"/>
@@ -15109,18 +15060,18 @@ package leakage will be ruined</text>
 <segment>
 <pinref part="GND28" gate="1" pin="GND"/>
 <pinref part="C24" gate="G$1" pin="2"/>
-<wire x1="213.36" y1="50.8" x2="213.36" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="50.8" x2="218.44" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND27" gate="1" pin="GND"/>
 <pinref part="C23" gate="G$1" pin="2"/>
-<wire x1="220.98" y1="50.8" x2="220.98" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="50.8" x2="226.06" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND21" gate="1" pin="GND"/>
 <pinref part="U$4" gate="G$1" pin="P"/>
-<wire x1="38.1" y1="50.8" x2="38.1" y2="58.42" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="58.42" x2="35.56" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="50.8" x2="33.02" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="58.42" x2="30.48" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="PP_P5V0_ANALOG_RC" class="0">
@@ -15139,7 +15090,7 @@ package leakage will be ruined</text>
 <label x="78.74" y="172.72" size="0.8128" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="VOUT_TIA" class="0">
+<net name="TIA_VOUT" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="OUT"/>
 <wire x1="86.36" y1="152.4" x2="114.3" y2="152.4" width="0.1524" layer="91"/>
@@ -15186,11 +15137,17 @@ package leakage will be ruined</text>
 <label x="68.58" y="149.86" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
-<net name="N$8" class="0">
+<net name="TIA_CF" class="0">
 <segment>
 <pinref part="R4" gate="1" pin="S"/>
-<wire x1="96.52" y1="193.04" x2="78.74" y2="193.04" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="96.52" y1="193.04" x2="71.12" y2="193.04" width="0.1524" layer="91"/>
+<label x="91.44" y="194.31" size="0.8128" layer="95" rot="R180"/>
+<pinref part="U$5" gate="G$1" pin="P"/>
+<pinref part="U$6" gate="G$1" pin="P"/>
+<wire x1="71.12" y1="193.04" x2="68.58" y2="193.04" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="187.96" x2="71.12" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="187.96" x2="71.12" y2="193.04" width="0.1524" layer="91"/>
+<junction x="71.12" y="193.04"/>
 </segment>
 </net>
 <net name="VOUT_DRIVER_AMP" class="0">
@@ -15269,10 +15226,8 @@ package leakage will be ruined</text>
 <junction x="172.72" y="119.38"/>
 </segment>
 <segment>
-<pinref part="IC5" gate="G$1" pin="IN@1"/>
 <wire x1="172.72" y1="63.5" x2="170.18" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="63.5" x2="170.18" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IN"/>
 <wire x1="170.18" y1="66.04" x2="172.72" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="66.04" x2="162.56" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="C22" gate="G$1" pin="1"/>
@@ -15280,13 +15235,15 @@ package leakage will be ruined</text>
 <junction x="170.18" y="66.04"/>
 <wire x1="162.56" y1="66.04" x2="127" y2="66.04" width="0.1524" layer="91"/>
 <junction x="162.56" y="66.04"/>
-<pinref part="IC4" gate="G$1" pin="ON"/>
 <wire x1="111.76" y1="66.04" x2="127" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="C19" gate="G$1" pin="2"/>
 <wire x1="121.92" y1="60.96" x2="127" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="127" y1="60.96" x2="127" y2="66.04" width="0.1524" layer="91"/>
 <junction x="127" y="66.04"/>
 <label x="152.4" y="68.58" size="1.778" layer="95" rot="R180"/>
+<pinref part="IC4" gate="G$1" pin="OUTN"/>
+<pinref part="IC5" gate="G$1" pin="INN6"/>
+<pinref part="IC5" gate="G$1" pin="INN9"/>
 </segment>
 </net>
 <net name="PP_P12V0_ANALOG" class="0">
@@ -15321,12 +15278,9 @@ package leakage will be ruined</text>
 <junction x="172.72" y="200.66"/>
 </segment>
 <segment>
-<pinref part="IC5" gate="G$1" pin="!SN"/>
 <wire x1="172.72" y1="60.96" x2="167.64" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="60.96" x2="167.64" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="!SP"/>
 <wire x1="167.64" y1="71.12" x2="172.72" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="IC5" gate="G$1" pin="IP"/>
 <wire x1="172.72" y1="73.66" x2="167.64" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="71.12" x2="167.64" y2="73.66" width="0.1524" layer="91"/>
 <junction x="167.64" y="71.12"/>
@@ -15336,13 +15290,16 @@ package leakage will be ruined</text>
 <junction x="167.64" y="73.66"/>
 <junction x="154.94" y="73.66"/>
 <wire x1="127" y1="73.66" x2="154.94" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="IC4" gate="G$1" pin="OP"/>
 <wire x1="111.76" y1="73.66" x2="127" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="C20" gate="G$1" pin="2"/>
 <wire x1="121.92" y1="68.58" x2="127" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="127" y1="68.58" x2="127" y2="73.66" width="0.1524" layer="91"/>
 <junction x="127" y="73.66"/>
 <label x="152.4" y="76.2" size="1.778" layer="95" rot="R180"/>
+<pinref part="IC4" gate="G$1" pin="OUTP"/>
+<pinref part="IC5" gate="G$1" pin="!SHDNN"/>
+<pinref part="IC5" gate="G$1" pin="!SHDNP"/>
+<pinref part="IC5" gate="G$1" pin="INP"/>
 </segment>
 </net>
 <net name="PP_P5V0_ANALOG" class="0">
@@ -15352,18 +15309,18 @@ package leakage will be ruined</text>
 <label x="60.96" y="170.18" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="IC5" gate="G$1" pin="OP"/>
-<wire x1="193.04" y1="73.66" x2="208.28" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="208.28" y1="73.66" x2="213.36" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="73.66" x2="213.36" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="73.66" x2="218.44" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="C26" gate="G$1" pin="2"/>
-<wire x1="213.36" y1="73.66" x2="231.14" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="203.2" y1="68.58" x2="208.28" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="208.28" y1="68.58" x2="208.28" y2="73.66" width="0.1524" layer="91"/>
-<junction x="208.28" y="73.66"/>
-<label x="231.14" y="73.66" size="1.778" layer="95"/>
-<pinref part="C24" gate="G$1" pin="1"/>
-<wire x1="213.36" y1="63.5" x2="213.36" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="73.66" x2="236.22" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="68.58" x2="213.36" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="68.58" x2="213.36" y2="73.66" width="0.1524" layer="91"/>
 <junction x="213.36" y="73.66"/>
+<label x="236.22" y="73.66" size="1.778" layer="95"/>
+<pinref part="C24" gate="G$1" pin="1"/>
+<wire x1="218.44" y1="63.5" x2="218.44" y2="73.66" width="0.1524" layer="91"/>
+<junction x="218.44" y="73.66"/>
+<pinref part="IC5" gate="G$1" pin="OUTP"/>
 </segment>
 </net>
 <net name="PP_N5V0_ANALOG" class="0">
@@ -15373,100 +15330,120 @@ package leakage will be ruined</text>
 <label x="60.96" y="134.62" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
-<pinref part="IC5" gate="G$1" pin="ON"/>
-<wire x1="193.04" y1="66.04" x2="208.28" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="66.04" x2="213.36" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="C25" gate="G$1" pin="2"/>
-<wire x1="203.2" y1="60.96" x2="208.28" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="208.28" y1="60.96" x2="208.28" y2="66.04" width="0.1524" layer="91"/>
-<junction x="208.28" y="66.04"/>
-<label x="231.14" y="66.04" size="1.778" layer="95"/>
-<wire x1="208.28" y1="66.04" x2="220.98" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="60.96" x2="213.36" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="60.96" x2="213.36" y2="66.04" width="0.1524" layer="91"/>
+<junction x="213.36" y="66.04"/>
+<label x="236.22" y="66.04" size="1.778" layer="95"/>
+<wire x1="213.36" y1="66.04" x2="226.06" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="C23" gate="G$1" pin="1"/>
-<wire x1="220.98" y1="66.04" x2="231.14" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="63.5" x2="220.98" y2="66.04" width="0.1524" layer="91"/>
-<junction x="220.98" y="66.04"/>
+<wire x1="226.06" y1="66.04" x2="236.22" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="63.5" x2="226.06" y2="66.04" width="0.1524" layer="91"/>
+<junction x="226.06" y="66.04"/>
+<pinref part="IC5" gate="G$1" pin="OUTN"/>
 </segment>
 </net>
 <net name="PP_PVIN" class="0">
 <segment>
 <pinref part="U$2" gate="G$1" pin="P"/>
 <pinref part="D1" gate="G$1" pin="A"/>
-<wire x1="35.56" y1="73.66" x2="50.8" y2="73.66" width="0.1524" layer="91"/>
-<label x="48.26" y="76.2" size="1.778" layer="95" rot="R180"/>
+<wire x1="30.48" y1="73.66" x2="45.72" y2="73.66" width="0.1524" layer="91"/>
+<label x="43.18" y="76.2" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
 <net name="PP_NVIN" class="0">
 <segment>
 <pinref part="D2" gate="G$1" pin="C"/>
 <pinref part="U$3" gate="G$1" pin="P"/>
-<wire x1="50.8" y1="66.04" x2="35.56" y2="66.04" width="0.1524" layer="91"/>
-<label x="48.26" y="68.58" size="1.778" layer="95" rot="R180"/>
+<wire x1="45.72" y1="66.04" x2="30.48" y2="66.04" width="0.1524" layer="91"/>
+<label x="43.18" y="68.58" size="1.778" layer="95" rot="R180"/>
 </segment>
 </net>
-<net name="N$1" class="0">
+<net name="BP_12V" class="0">
 <segment>
-<pinref part="IC4" gate="G$1" pin="BP"/>
 <pinref part="C20" gate="G$1" pin="1"/>
 <wire x1="111.76" y1="68.58" x2="114.3" y2="68.58" width="0.1524" layer="91"/>
+<label x="116.84" y="69.85" size="0.8128" layer="95" rot="R180"/>
+<pinref part="IC4" gate="G$1" pin="BYPP"/>
 </segment>
 </net>
-<net name="N$9" class="0">
+<net name="BN_12V" class="0">
 <segment>
-<pinref part="IC4" gate="G$1" pin="BN"/>
 <pinref part="C19" gate="G$1" pin="1"/>
 <wire x1="111.76" y1="60.96" x2="114.3" y2="60.96" width="0.1524" layer="91"/>
+<label x="116.84" y="62.23" size="0.8128" layer="95" rot="R180"/>
+<pinref part="IC4" gate="G$1" pin="BYPN"/>
 </segment>
 </net>
-<net name="N$2" class="0">
+<net name="BP_5V" class="0">
 <segment>
-<pinref part="IC5" gate="G$1" pin="BP"/>
 <pinref part="C26" gate="G$1" pin="1"/>
-<wire x1="193.04" y1="68.58" x2="195.58" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="68.58" x2="200.66" y2="68.58" width="0.1524" layer="91"/>
+<label x="203.2" y="69.85" size="0.8128" layer="95" rot="R180"/>
+<pinref part="IC5" gate="G$1" pin="BYPP"/>
 </segment>
 </net>
-<net name="N$3" class="0">
+<net name="BN_5V" class="0">
 <segment>
-<pinref part="IC5" gate="G$1" pin="BN"/>
 <pinref part="C25" gate="G$1" pin="1"/>
-<wire x1="193.04" y1="60.96" x2="195.58" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="198.12" y1="60.96" x2="200.66" y2="60.96" width="0.1524" layer="91"/>
+<label x="203.2" y="62.23" size="0.8128" layer="95" rot="R180"/>
+<pinref part="IC5" gate="G$1" pin="BYPN"/>
 </segment>
 </net>
 <net name="PP_PVIN_D" class="0">
 <segment>
-<pinref part="IC4" gate="G$1" pin="!SN"/>
-<wire x1="91.44" y1="60.96" x2="86.36" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="60.96" x2="86.36" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="IC4" gate="G$1" pin="!SP"/>
-<wire x1="86.36" y1="71.12" x2="91.44" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="IC4" gate="G$1" pin="IP"/>
-<wire x1="91.44" y1="73.66" x2="86.36" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="71.12" x2="86.36" y2="73.66" width="0.1524" layer="91"/>
-<junction x="86.36" y="71.12"/>
-<wire x1="86.36" y1="73.66" x2="73.66" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="73.66" x2="73.66" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="60.96" x2="81.28" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="60.96" x2="81.28" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="71.12" x2="86.36" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="73.66" x2="81.28" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="71.12" x2="81.28" y2="73.66" width="0.1524" layer="91"/>
+<junction x="81.28" y="71.12"/>
+<wire x1="81.28" y1="73.66" x2="68.58" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="73.66" x2="68.58" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="C15" gate="G$1" pin="1"/>
-<junction x="86.36" y="73.66"/>
-<junction x="73.66" y="73.66"/>
-<wire x1="55.88" y1="73.66" x2="73.66" y2="73.66" width="0.1524" layer="91"/>
-<label x="68.58" y="76.2" size="1.778" layer="95" rot="R180"/>
+<junction x="81.28" y="73.66"/>
+<junction x="68.58" y="73.66"/>
+<wire x1="50.8" y1="73.66" x2="68.58" y2="73.66" width="0.1524" layer="91"/>
+<label x="63.5" y="76.2" size="1.778" layer="95" rot="R180"/>
 <pinref part="D1" gate="G$1" pin="C"/>
+<pinref part="IC4" gate="G$1" pin="!SHDNN"/>
+<pinref part="IC4" gate="G$1" pin="!SHDNP"/>
+<pinref part="IC4" gate="G$1" pin="INP"/>
 </segment>
 </net>
 <net name="PP_NVIN_D" class="0">
 <segment>
-<pinref part="IC4" gate="G$1" pin="IN@1"/>
-<wire x1="91.44" y1="63.5" x2="88.9" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="63.5" x2="88.9" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="IC4" gate="G$1" pin="IN"/>
-<wire x1="88.9" y1="66.04" x2="91.44" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="66.04" x2="81.28" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="63.5" x2="83.82" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="63.5" x2="83.82" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="66.04" x2="86.36" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="66.04" x2="76.2" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="C16" gate="G$1" pin="1"/>
-<wire x1="81.28" y1="66.04" x2="81.28" y2="63.5" width="0.1524" layer="91"/>
-<junction x="88.9" y="66.04"/>
-<wire x1="81.28" y1="66.04" x2="55.88" y2="66.04" width="0.1524" layer="91"/>
-<junction x="81.28" y="66.04"/>
-<label x="68.58" y="68.58" size="1.778" layer="95" rot="R180"/>
+<wire x1="76.2" y1="66.04" x2="76.2" y2="63.5" width="0.1524" layer="91"/>
+<junction x="83.82" y="66.04"/>
+<wire x1="76.2" y1="66.04" x2="50.8" y2="66.04" width="0.1524" layer="91"/>
+<junction x="76.2" y="66.04"/>
+<label x="63.5" y="68.58" size="1.778" layer="95" rot="R180"/>
 <pinref part="D2" gate="G$1" pin="A"/>
+<pinref part="IC4" gate="G$1" pin="INN6"/>
+<pinref part="IC4" gate="G$1" pin="INN9"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<wire x1="114.3" y1="50.8" x2="114.3" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="58.42" x2="111.76" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="GND23" gate="1" pin="GND"/>
+<pinref part="IC4" gate="G$1" pin="GND5"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<wire x1="200.66" y1="50.8" x2="200.66" y2="58.42" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="58.42" x2="198.12" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="GND29" gate="1" pin="GND"/>
+<pinref part="IC5" gate="G$1" pin="GND5"/>
 </segment>
 </net>
 </nets>
