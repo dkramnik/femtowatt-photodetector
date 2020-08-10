@@ -14585,7 +14585,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="R5" library="rcl-modified-footprints" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="RES SMD 100R 0603 1%"/>
 <part name="R6" library="rcl-modified-footprints" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="RES SMD 100R 0603 1%"/>
 <part name="R7" library="pot" library_urn="urn:adsk.eagle:library:331" deviceset="TRIM_EU-" device="RJ9W" package3d_urn="urn:adsk.eagle:package:22702/1" value="100k"/>
-<part name="U$1" library="4534" deviceset="VIA" device=""/>
+<part name="U$1" library="4534" deviceset="VIA" device="" value="RF"/>
 <part name="IC3" library="femto-tia" deviceset="OPA827" device="" value="OPA140"/>
 <part name="C9" library="rcl-modified-footprints" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2"/>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
